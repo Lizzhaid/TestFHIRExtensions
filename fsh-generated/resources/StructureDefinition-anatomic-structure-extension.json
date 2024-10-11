@@ -1,0 +1,135 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anatomic-structure-extension",
+  "url": "http://example.org/StructureDefinition/anatomic-structure-extension",
+  "name": "AnatomicStructureExtension",
+  "title": "Anatomic Structure Extension",
+  "status": "draft",
+  "description": "Extension to be used on the Body Structure Resource for either Included or Excluded Structures",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "BodyStructure",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Anatomic Structure Extension",
+        "definition": "Extension to be used on the Body Structure Resource for either Included or Excluded Structures"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:structure",
+        "path": "Extension.extension",
+        "sliceName": "structure",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:structure.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:structure.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "structure"
+      },
+      {
+        "id": "Extension.extension:structure.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:laterality",
+        "path": "Extension.extension",
+        "sliceName": "laterality",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:laterality.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:laterality.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "laterality"
+      },
+      {
+        "id": "Extension.extension:laterality.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:qualifier",
+        "path": "Extension.extension",
+        "sliceName": "qualifier",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:qualifier.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:qualifier.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "qualifier"
+      },
+      {
+        "id": "Extension.extension:qualifier.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://example.org/StructureDefinition/anatomic-structure-extension"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

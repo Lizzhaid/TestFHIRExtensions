@@ -1,0 +1,49 @@
+{
+  "resourceType": "BodyStructure",
+  "id": "BodyStructureMidAscendingAortaExample",
+  "meta": {
+    "profile": [
+      "http://example.org/StructureDefinition/body-structure-extended"
+    ]
+  },
+  "identifier": [
+    {
+      "value": "1234119955",
+      "system": "http://my-hospital.com/bodyStructures"
+    }
+  ],
+  "extension": [
+    {
+      "extension": [
+        {
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "54247002",
+                "display": "Ascending aorta"
+              }
+            ]
+          },
+          "url": "structure"
+        },
+        {
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "255562008",
+                "display": "Mid"
+              }
+            ]
+          },
+          "url": "qualifier"
+        }
+      ],
+      "url": "http://example.org/StructureDefinition/anatomic-structure-extension"
+    }
+  ],
+  "patient": {
+    "reference": "Patient/PatientExample"
+  }
+}

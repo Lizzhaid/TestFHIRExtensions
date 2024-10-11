@@ -1,0 +1,106 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "fhir.example.test",
+  "url": "http://example.org/ImplementationGuide/fhir.example.test",
+  "version": "0.1.0",
+  "name": "TEST_IG",
+  "status": "draft",
+  "publisher": "Example Publisher",
+  "contact": [
+    {
+      "name": "Example Publisher",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://example.org/example-publisher"
+        }
+      ]
+    }
+  ],
+  "packageId": "fhir.example.test",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/anatomic-structure-extension"
+        },
+        "name": "Anatomic Structure Extension",
+        "description": "Extension to be used on the Body Structure Resource for either Included or Excluded Structures",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/body-structure-extended"
+        },
+        "name": "Body Structure Extended",
+        "description": "Profile to support multiple structures as in R5",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/interpretation-extension"
+        },
+        "name": "Interpretation Extension",
+        "description": "Test of rendering of complex extensions",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/BodyStructureMidAscendingAortaExample"
+        },
+        "name": "Mid Ascending Aorta",
+        "description": "Example for MidAscending Aorta",
+        "exampleCanonical": "http://example.org/StructureDefinition/body-structure-extended"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ObservationExample"
+        },
+        "name": "Observation Example",
+        "description": "Test of rendering of complex extensions",
+        "exampleCanonical": "http://example.org/StructureDefinition/observation-extended"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/observation-extended"
+        },
+        "name": "Observation Extended",
+        "description": "Test of rendering of complex extensions",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientExample"
+        },
+        "name": "PatientExample",
+        "description": "An example of a patient with a license to krill.",
+        "exampleBoolean": true
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2024+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}

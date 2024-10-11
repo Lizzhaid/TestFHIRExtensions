@@ -1,0 +1,40 @@
+{
+  "resourceType": "Observation",
+  "id": "ObservationExample",
+  "meta": {
+    "profile": [
+      "http://example.org/StructureDefinition/observation-extended"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "81827009",
+        "display": "Diameter"
+      }
+    ]
+  },
+  "interpretation": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "valueQuantity": {
+                "value": 7
+              },
+              "url": "confidenceQuantity"
+            },
+            {
+              "url": "certaintyOfFindingNote",
+              "valueString": "Confidence range (1 - low to 10 - high)"
+            }
+          ],
+          "url": "http://example.org/StructureDefinition/interpretation-extension"
+        }
+      ]
+    }
+  ],
+  "status": "preliminary"
+}

@@ -1,0 +1,75 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "body-structure-extended",
+  "url": "http://example.org/StructureDefinition/body-structure-extended",
+  "name": "BodyStructureExtended",
+  "title": "Body Structure Extended",
+  "status": "draft",
+  "description": "Profile to support multiple structures as in R5",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "openehr",
+      "uri": "http://openehr.org",
+      "name": "Open EHR Archetype Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "BodyStructure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/BodyStructure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "BodyStructure.extension",
+        "path": "BodyStructure.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "BodyStructure.extension:includedStructure",
+        "path": "BodyStructure.extension",
+        "sliceName": "includedStructure",
+        "short": "Included anatomic location(s)",
+        "definition": "Included anatomic location(s)",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://example.org/StructureDefinition/anatomic-structure-extension"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}
