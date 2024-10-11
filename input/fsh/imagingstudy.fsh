@@ -70,9 +70,12 @@ Description: "Imaging Study with extensions Example"
 * series[=].modality.code = #CT
 * series[=].uid = "2.16.124.113543.6003.2588828330.45298.2309"
 * series[=].extension[seriesNumber].valueInteger = 5
-* series[=].instance.uid = "2.16.124.113543.6003.2588828330.45298.156745"
-* series[=].instance.sopClass = #1.2.840.10008.5.1.4.1.1.7
-* series[=].instance.extension[subset].valueString = "6 Frame 1"
+* series[=].instance[0].uid = "2.16.124.113543.6003.2588828330.45298.156745"
+* series[=].instance[=].sopClass = #1.2.840.10008.5.1.4.1.1.7
+* series[=].instance[=].extension[subset].valueString = "Frame 1"
+* series[=].instance[+].uid = "2.16.124.113543.6003.2588828330.45298.156745"
+* series[=].instance[=].sopClass = #1.2.840.10008.5.1.4.1.1.7
+* series[=].instance[=].extension[subset].valueString = "Frame 2"
 * subject = Reference(PatientExample)
 
 
